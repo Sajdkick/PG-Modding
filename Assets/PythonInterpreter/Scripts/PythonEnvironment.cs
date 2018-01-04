@@ -30,6 +30,15 @@ public class PythonEnvironment
         m_pythonEngine.Runtime.LoadAssembly(System.Reflection.Assembly.GetExecutingAssembly());
         
         m_scriptScope = m_pythonEngine.CreateScope();
+        var libs = new[] {
+            "C:\\Program Files (x86)\\IronPython-2.7.7\\Lib",
+            "C:\\Program Files (x86)\\IronPython-2.7.7\\DLLs",
+            "C:\\Program Files (x86)\\IronPython-2.7.7",
+            "C:\\Program Files (x86)\\IronPython-2.7.7\\lib\\site-packages"
+        };
+
+        m_pythonEngine.SetSearchPaths(libs);
+
     }
 
     public CommandResult RunCommand(string command)

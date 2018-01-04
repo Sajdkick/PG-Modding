@@ -5,8 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class PythonInput {
 
-    public string[] names;
-    public float[] xPos;
-    public float[] yPos;
+    public int[] index;
+    public float[] timer;
 
 }
